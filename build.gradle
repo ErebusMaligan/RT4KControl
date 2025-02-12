@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+dependencies {
+	compile fileTree( dir: "../libs", include: ['jSerial*.jar'] )
+}
+
+ext {
+	includeLibs = true
+	copyLibs = true
+	deployedProjDir = "deployed/Tools"
+	deployedLibDir = "./"
+	libDest = "deployed/Tools/libs"
+	jarPathPrefix = "./libs/"
+	
+	mainClass = "app.RT4KControl"
+	iconFile = ''
+}
+
+apply from: '../gradle/utilapp.gradle'
