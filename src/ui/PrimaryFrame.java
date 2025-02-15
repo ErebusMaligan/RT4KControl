@@ -22,6 +22,7 @@ public class PrimaryFrame extends JFrame {
 		this.addWindowListener( new WindowAdapter() {
 			@Override
 			public void windowClosed( WindowEvent e ) {
+				provider.stopJPoll();
 				provider.getSerialConn().shutdown();
 			}
 		} );

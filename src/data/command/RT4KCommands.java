@@ -1,6 +1,6 @@
 package data.command;
 
-public class T4KCommands {
+public class RT4KCommands {
 
 	/**
 	 * Command prefix

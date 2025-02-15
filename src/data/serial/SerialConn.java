@@ -2,7 +2,7 @@ package data.serial;
 
 import com.fazecast.jSerialComm.SerialPort;
 
-import data.command.T4KCommands;
+import data.command.RT4KCommands;
 
 public class SerialConn {
 	
@@ -36,8 +36,8 @@ public class SerialConn {
 	}
 	
 	public void sendCommand( String command ) {
-		if ( port.isOpen() ) {
-			String com = T4KCommands.REMOTE + " " + command + "\n";
+		if ( port != null && port.isOpen() ) {
+			String com = RT4KCommands.REMOTE + " " + command + "\n";
 			byte[] b = com.getBytes();
 			int count = port.writeBytes( b, b.length );
 			System.out.println( "(" + count + "): " + com );

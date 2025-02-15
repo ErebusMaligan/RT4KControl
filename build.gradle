@@ -1,7 +1,9 @@
 apply plugin: 'java'
 
 dependencies {
-	compile fileTree( dir: "../libs", include: ['jSerial*.jar'] )
+	implementation fileTree( dir: "../libs", include: ['jSerial*.jar', 'SwingJoystickWrapper.jar'] )
+	implementation fileTree( dir: "../libs/LWJGL/jar", include: 'lwjgl.jar' )
+	implementation fileTree( dir: "../libs/LWJGL/native", include: '*.dll' )
 }
 
 ext {
